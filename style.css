@@ -1,0 +1,149 @@
+:root {
+    --paper-color: #fff9e6;
+    --border-color: #0b48ee;
+    --text-color: #5978b6;
+    --accent-color: #1e4ba7;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background-color: #f5e9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Caveat', cursive;
+}
+
+.greeting-card {
+    width: 1100px;
+    height: 660px;
+    display: flex;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    position: relative;
+    background-color: var(--paper-color);
+    border: 1px solid var(--border-color);
+}
+
+.left-side {
+    width: 60%;
+    padding: 60px;
+    position: relative;
+    border-right: 2px dashed var(--border-color);
+    background: #A0BFFD;
+}
+
+.right-side {
+    width: 40%;
+    position: relative;
+    overflow: hidden;
+}
+
+.stamp {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.7rem;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    padding: 12px 18px;
+    border-radius: 50%;
+    transform: rotate(15deg);
+    background-color: white;
+}
+
+.content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 45px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-weight: 700;
+}
+
+.message {
+    font-size: 1.6rem;
+    line-height: 2;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.clock-container {
+    margin: 20px 0;
+}
+
+.clock {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 14px 28px;
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px solid var(--border-color);
+}
+
+.image-frame {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.corner-decoration {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 130px 130px;
+    border-color: transparent transparent var(--accent-color) transparent;
+    opacity: 0.3;
+}
+
+@media (max-width: 850px) {
+    .greeting-card {
+        flex-direction: column;
+        height: auto;
+        width: 95%;
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+    }
+
+    .left-side {
+        border-right: none;
+        border-bottom: 2px dashed var(--border-color);
+        padding: 30px;
+    }
+
+    .right-side {
+        height: 300px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+
+    .message {
+        font-size: 1.4rem;
+    }
+}
